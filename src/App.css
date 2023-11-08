@@ -69,7 +69,7 @@ body {
   position: absolute;
   width: 5px; /* sprinkle size */
   height: 5px; /* sprinkle size */
-  background: #1d3a9b; /* sprinkle color */
+  background: pink; /* sprinkle color */
   border-radius: 50%;
   /* Randomize animation delay and duration for each sprinkle */
   animation: flyAround 5s linear infinite;

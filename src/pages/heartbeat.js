@@ -3,7 +3,7 @@ import "../pages/heartbeat";
 
 const Heartbeat = () => {
   // Generating a range (e.g., 0 to 19) for 20 sprinkles
-  const sprinkleElements = [...Array(30).keys()].map((i) => (
+  const sprinkleElements = [...Array(50).keys()].map((i) => (
     <div
       key={i}
       className={`sprinkle`}
