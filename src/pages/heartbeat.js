@@ -1,11 +1,11 @@
 import React from "react";
-import "./heatbeat.css";
+import "../pages/heartbeat";
 
 const Heartbeat = () => {
   return (
-    <div id="conatiner">
-      <div className="left"></div>
-      <div className="right"></div>
+    <div id="container">
+      <div className="heart-part left"></div>
+      <div className="heart-part right"></div>
     </div>
   );
 };

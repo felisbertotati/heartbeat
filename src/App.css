@@ -1,38 +1,62 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  width: 30vw;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: Beat 2s ease infinite alternate;
+  filter: drop-shadow(0px 0px 20px #00000090);
+}
+
+.heart-part {
+  background-color: red;
+  width: 15vw;
+  height: 20vw;
+  border-radius: 50% 50% 0 0;
+  position: absolute; /* Position absolute to overlap correctly */
+}
+
+.left {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.right {
+  transform: rotate(45deg);
+  transform-origin: bottom right;
+}
+
+@keyframes Beat {
+  0%,
+  100% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scale(0.9);
   }
 }
