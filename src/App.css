@@ -15,40 +15,44 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#container {
-  width: 30vw;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: Beat 2s ease infinite alternate;
-  filter: drop-shadow(0px 0px 20px #00000090);
+  background-color: #f7f7f7; /* optional: background color */
 }
 
 .heart-part {
   background-color: red;
-  width: 15vw;
-  height: 20vw;
+  width: 15vw; /* half of the heart's width */
+  height: 24vw; /* enough height to create the bottom part of the heart */
   border-radius: 50% 50% 0 0;
-  position: absolute; /* Position absolute to overlap correctly */
+  position: absolute;
 }
 
 .left {
-  transform: rotate(-45deg);
-  transform-origin: bottom left;
+  transform: translateX(-50%) rotate(-45deg);
+  transform-origin: bottom right;
+  left: 60%; /* Align the left part to the middle of the container */
 }
 
 .right {
-  transform: rotate(45deg);
-  transform-origin: bottom right;
+  transform: translateX(50%) rotate(45deg);
+  transform-origin: bottom left;
+  right: 60%; /* Align the right part to the middle of the container */
+}
+
+#container {
+  width: 30vw;
+  height: 30vw; /* maintain the aspect ratio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Use relative positioning for container */
+  animation: Beat 2s ease infinite alternate;
 }
 
 @keyframes Beat {
@@ -58,5 +62,34 @@ body {
   }
   50% {
     transform: scale(0.9);
+  }
+}
+
+.sprinkle {
+  position: absolute;
+  width: 5px; /* sprinkle size */
+  height: 5px; /* sprinkle size */
+  background: #1d3a9b; /* sprinkle color */
+  border-radius: 50%;
+  /* Randomize animation delay and duration for each sprinkle */
+  animation: flyAround 5s linear infinite;
+}
+
+/* Example of a keyframe for flying sprinkles, customize as necessary */
+@keyframes flyAround {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(30px, -50px) scale(1.2);
+  }
+  50% {
+    transform: translate(50px, 10px) scale(1);
+  }
+  75% {
+    transform: translate(-20px, 30px) scale(0.8);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
   }
 }
